@@ -1,0 +1,8 @@
+com\jpa\entity\Repository.class
+com\jpa\EntityBuilder.class
+com\jpa\entity\Ent.class
+com\jpa\DynamicHibernateOrmApplication.class
+com\jpa\appPropertiesBuilder.class
+com\jpa\controller.class
+com\jpa\entity\Ent$EntBuilder.class
+com\jpa\meths.class
