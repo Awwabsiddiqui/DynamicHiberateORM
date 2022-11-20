@@ -12,13 +12,13 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "student")
+@Table(name = "college")
 public class Ent {
 
     @Id
 private int id;
-private int age;
-private String email;
-private String value;
+private String college;
+private String semester;
 private String name;
+private String university;
 }

@@ -3,6 +3,7 @@ package com.jpa;
 import com.jpa.entity.Ent;
 import com.jpa.entity.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.restart.RestartEndpoint;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,11 @@ import java.util.List;
 public class controller {
     @Autowired
     private Repository Repository;
+    private RestartEndpoint restartEndpoint;
+    
+    public void restartApp() {
+        restartEndpoint.restart();
+    }
 
     @GetMapping("/")
     public String[] homepage() {
@@ -54,6 +60,6 @@ public class controller {
                              @RequestParam(value = "dbpass") String dbpass) throws IOException {
         appPropertiesBuilder.appPropertiesMAker(schema,dbname,dbpass);
         EntityBuilder.entBuilder(tableName,cols);
-        return "appsDone";
+        return "http://localhost:8080/actuator/restart";
     }
 }

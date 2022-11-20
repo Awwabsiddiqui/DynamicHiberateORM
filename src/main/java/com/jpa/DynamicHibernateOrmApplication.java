@@ -9,5 +9,4 @@ public class DynamicHibernateOrmApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DynamicHibernateOrmApplication.class, args);
 	}
-
 }
