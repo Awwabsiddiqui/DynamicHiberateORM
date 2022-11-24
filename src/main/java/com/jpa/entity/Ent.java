@@ -1,7 +1,6 @@
 package com.jpa.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,14 +10,13 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Table(name = "college")
 public class Ent {
 
     @Id
-private int id;
-private String college;
-private String semester;
-private String name;
 private String university;
+private String name;
+private String semester;
+private String college;
+private int id;
 }

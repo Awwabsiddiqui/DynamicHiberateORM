@@ -30,7 +30,6 @@ public class controller {
         		+ "dbpass=&"
         		+ "schema=&"
         		+ "tableName=&"
-        		+ "columnsCSV="
         };
         return arr;
     }
@@ -54,11 +53,11 @@ public class controller {
 //    }
     @GetMapping("/config")
     public String config(@RequestParam(value = "tableName") String tableName,
-                             @RequestParam(value = "columnsCSV") String cols,
                              @RequestParam(value = "schema") String schema,
                              @RequestParam(value = "dbname") String dbname,
                              @RequestParam(value = "dbpass") String dbpass) throws IOException {
         appPropertiesBuilder.appPropertiesMAker(schema,dbname,dbpass);
+        String cols = getColNames.get(schema, dbname, dbpass, tableName);
         EntityBuilder.entBuilder(tableName,cols);
         return "http://localhost:8080/actuator/restart";
     }

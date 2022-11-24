@@ -17,7 +17,6 @@ public class EntityBuilder {
         StringBuffer sb = new StringBuffer("package com.jpa.entity;\n" +
                 "\n" +
                 "import lombok.AllArgsConstructor;\n" +
-                "import lombok.Builder;\n" +
                 "import lombok.Data;\n" +
                 "import lombok.NoArgsConstructor;\n" +
                 "\n" +
@@ -27,7 +26,6 @@ public class EntityBuilder {
                 "@Data\n" +
                 "@AllArgsConstructor\n" +
                 "@NoArgsConstructor\n" +
-                "@Builder\n" +
                 "@Table(name = \""+tableName+"\")\n" +
                 "public class Ent {\n" +
                 "\n" +
